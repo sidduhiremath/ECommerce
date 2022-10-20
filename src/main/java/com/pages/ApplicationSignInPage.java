@@ -2,6 +2,7 @@ package com.pages;
 
 import java.io.IOException;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -52,8 +53,11 @@ public class ApplicationSignInPage extends CommonMethods{
 	
 	public void ClickOnSignInButton() throws Exception {
 		Thread.sleep(4000);
-		takescreenshot("Entered Credentials");
-	    Web_Click(signinbutton);
+//		takescreenshot("Entered Credentials");
+//	    Web_Click(signinbutton);
+//		WebElement element = driver.findElement(By.id("gbqfd"));
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", signinbutton);
 		Thread.sleep(4000);
 	}
 
