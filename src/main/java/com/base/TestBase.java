@@ -47,7 +47,7 @@ public class TestBase {
 	public TestBase() {
 		try {
 			property = new Properties();
-			FileInputStream ip = new FileInputStream("C:\\Users\\00005110\\OneDrive - Arisglobal software pvt Ltd\\Desktop\\Maven Project\\SeleniumFrameWork\\src\\main\\java\\com\\config\\config.properties");
+			FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\com\\config\\config.properties");
 			property.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -62,11 +62,11 @@ public class TestBase {
 			
 		
 		if(browserName.equals("chrome")){
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\00005110\\OneDrive - Arisglobal software pvt Ltd\\Desktop\\Maven Project\\SeleniumFrameWork\\src\\main\\java\\com\\utils\\chromedriver.exe");	
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\src\\main\\java\\com\\resource\\chromedriver.exe");	
 			driver = new ChromeDriver(); 
 		}
 		else if(browserName.equals("FF")){
-			System.setProperty("webdriver.gickodriver.driver", System.getProperty("user.dir")+"src\\main\\java\\com\\utils\\gickodriver.exe");	
+			System.setProperty("webdriver.gickodriver.driver", System.getProperty("user.dir")+"\\src\\main\\java\\com\\resource\\gickodriver.exe");	
 			driver = new ChromeDriver(); 
 		}
 		else {
@@ -93,7 +93,7 @@ public class TestBase {
 	}
 	
 	public String ReadFromExcel(int n) throws Exception {
-	file = new File("C:\\Users\\00005110\\OneDrive - Arisglobal software pvt Ltd\\Desktop\\Maven Project\\SeleniumFrameWork\\src\\main\\java\\com\\testdata\\Controller.xlsx");
+	file = new File(System.getProperty("user.dir")+"\\src\\main\\java\\com\\testdata\\Controller.xlsx");
 	FileInputStream fis = new FileInputStream(file);
 	XSSFWorkbook xssfWorkbook = new XSSFWorkbook(fis);
 	XSSFSheet sheet = xssfWorkbook.getSheetAt(0);
