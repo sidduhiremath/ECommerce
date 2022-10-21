@@ -14,7 +14,6 @@ features = { "src\\test\\java\\com\\Features"}
 ,monochrome=true
 //,dryRun=false
 ,plugin= {"pretty","json:target/cucumber.json","com.cucumber.listener.ExtentCucumberFormatter:target/report.html"} //to generate different types of reporting
-//,tags= {"@Login,@mCheck"}
 )
 public class Runner {
 
